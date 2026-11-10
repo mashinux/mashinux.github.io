@@ -1,4 +1,3 @@
+# Crawling stays open so search engines can read the noindex tag on the page.
 User-agent: *
 Allow: /
-
-Sitemap: https://mashinux.github.io/sitemap.xml
