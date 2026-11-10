@@ -68,7 +68,7 @@ window.MX_CONTENT = {
 
   // שירותים. image = תמונה לשירות (אם יש)
   services: [
-    { no: '01', name: 'שירותי כרסום CNC', line: 'כרסום ב-3 וב-5 צירים: כיסים, משטחים, חורים והברגות, מחלק בודד ועד סדרה.', image: 'assets/work/work-gear-bracket.jpg' },
+    { no: '01', name: 'שירותי כרסום CNC', line: 'כרסום ב-3 וב-5 צירים: כיסים, משטחים, חורים והברגות, מחלק בודד ועד סדרה.', image: 'assets/work/work-gear-bracket-3x2.jpg' },
     { no: '02', name: 'שירותי חריטת CNC', line: 'חלקים סיבוביים: צירים, תותבים וטבעות.', image: 'assets/work/work-steel-shaft.jpg' },
     { no: '03', name: 'השחזה עגולה', line: 'משטחים גליליים בדיוק של עד 0.001 מ"מ.', image: 'assets/machines/machine-bench-lathe.jpg' },
     { no: '04', name: 'הרכבות', line: 'הרכבה של מכלולים מוכנים לשימוש.', image: 'assets/work/work-amber-ring-assembly.jpg' }   // תמונה זמנית — בעל העסק ישלח תמונה
@@ -92,7 +92,7 @@ window.MX_CONTENT = {
     { id: 'shaft', title: 'ציר פלדה', image: 'assets/work/work-steel-shaft.jpg', w: 1600, h: 1066, layout: 'wide', pos: '56% 50%',
       material: 'פלדה', process: 'חריטה · השחזה עגולה', industry: null, challenge: null, qty: null,
       alt: 'ציר פלדה עם קטעים מושחזים ומשטחים מכורסמים, גפרור לקנה מידה' },
-    { id: 'gear', title: 'חלק אלומיניום עם גלגל שיניים', image: 'assets/work/work-gear-bracket.jpg', w: 1065, h: 1600, layout: 'narrow', pos: '50% 58%',
+    { id: 'gear', title: 'חלק אלומיניום עם גלגל שיניים', image: 'assets/work/work-gear-bracket.jpg', w: 1065, h: 1600, layout: 'narrow', pos: '50% 30%',
       material: 'אלומיניום', process: 'כרסום CNC', industry: null, challenge: null, qty: null,
       alt: 'חלק אלומיניום מכורסם עם גלגל שיניים וכיס חצי-עגול, גפרור לקנה מידה' },
     { id: 'brass', title: 'גשר מחברים', image: 'assets/work/work-brass-block.jpg', w: 1600, h: 1066, layout: 'narrow', pos: '42% 50%',
