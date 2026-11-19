@@ -519,7 +519,8 @@
   if (C.contact.email) $('#sendMail').href = `mailto:${C.contact.email}?subject=${encodeURIComponent('בקשה להצעת מחיר')}&body=${encodeURIComponent('שלום,\nאשמח להצעת מחיר. השרטוט מצורף.\n\nשם:\nחברה:\nכמות:\n')}`;
   else $('#sendMail').remove();
   // footer link opens the accessibility statement
-  $('#a11yLink')?.addEventListener('click', e => { e.preventDefault(); const d = $('#a11y'); d.open = true; d.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); d.querySelector('summary').focus({ preventScroll: true }); });
+  // footer / form links open the accessibility statement or the privacy policy
+  $$('a[href="#a11y"]:not(#awStmt), a[href="#privacy"]').forEach(l => l.addEventListener('click', e => { const d = $(l.getAttribute('href')); if (!d) return; e.preventDefault(); d.open = true; d.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); d.querySelector('summary').focus({ preventScroll: true }); }));
   // inside a preview frame (e.g. a shared preview link) mailto:/tel: can't navigate the frame — open them in a new tab instead
   if (window.top !== window) document.addEventListener('click', e => {
     const l = e.target.closest('a[href^="mailto:"], a[href^="tel:"]');

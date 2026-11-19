@@ -254,17 +254,19 @@
       requestAnimationFrame(frame);
       if (!visible || t0 === null) { last = now; return; }
       const dt = Math.min((now - last) / 1000, 0.05); last = now;
-      const t = reduce ? T_END : (now - t0) / 1000;
+      const still = reduce || document.documentElement.classList.contains('a-sa');   // accessibility menu: stop animations
+      const t = still ? T_END : (now - t0) / 1000;
       setState(t);
 
-      if (!reduce && t > T_PRINT && t < T_PRINT + T_MILL) {
+      if (!still && t > T_PRINT && t < T_PRINT + T_MILL) {
         for (let k = 0; k < (small ? 2 : 4); k++) spawnChip(mill.position.x, H + 0.01, mill.position.z);
       }
       stepChips(dt);
 
       // idle: gentle sway + pointer tilt
       pointer.x += (pointer.tx - pointer.x) * 0.06; pointer.y += (pointer.ty - pointer.y) * 0.06;
-      const idle = reduce ? 0 : Math.max(0, Math.min((t - T_END) / 1.2, 1));
+      const idle = still ? 0 : Math.max(0, Math.min((t - T_END) / 1.2, 1));
+      if (still) { pointer.tx = pointer.ty = 0; }
       logo.rotation.y = idle * (Math.sin(now / 2400) * 0.05) + pointer.x * 0.22;
       logo.rotation.x = pointer.y * 0.12;
       shadow.rotation.y = logo.rotation.y;
