@@ -1104,3 +1104,39 @@ main:focus { outline: none; }
 .a11y__body ul { display: grid; gap: 6px; padding-inline-start: 1.2em; list-style: disc; }
 .a11y__body a { color: var(--metal); text-decoration: underline; text-underline-offset: 3px; }
 .a11y__date { font-family: var(--mono); font-size: var(--fs-mono); }
+
+/* ---------- privacy note under the send options ---------- */
+.send__privacy { margin-top: 12px; color: var(--ink-muted); font-size: var(--fs-small); line-height: 1.6; }
+.send__privacy a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+#privacy { scroll-margin-top: 96px; }
+
+/* ---------- accessibility menu (self-coded) ---------- */
+#a11yw{font-family:system-ui,sans-serif}
+.aw-open{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:95;width:48px;height:52px;border:0;border-radius:0 14px 14px 0;background:#2f54ff;color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.aw-panel{position:fixed;left:12px;top:50%;transform:translateY(-50%);z-index:140;width:min(330px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;background:#fff;color:#14152b;border-radius:18px;padding:16px;box-shadow:0 20px 60px rgba(0,0,0,.55);direction:rtl}
+.aw-panel[hidden]{display:none}
+.aw-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.aw-head h2{font-weight:800;font-size:19px;color:#14152b;outline:0;margin:0;letter-spacing:0;line-height:1.3}
+.aw-x{border:0;background:none;font-size:20px;width:40px;height:40px;border-radius:10px;cursor:pointer;color:#14152b}
+.aw-zoom{display:flex;align-items:center;justify-content:space-between;background:#f0f2f8;border-radius:12px;padding:6px;margin-bottom:12px}
+.aw-zoom button{width:44px;height:40px;border:0;border-radius:10px;background:#fff;font-size:20px;font-weight:800;color:#14152b;cursor:pointer}.aw-zoom span{font-weight:800;color:#14152b}
+.aw-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.aw-t{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 6px;border:1.5px solid #d9dcea;border-radius:12px;background:#fff;color:#2f54ff;font:700 15px/1.2 system-ui,sans-serif;cursor:pointer}
+.aw-t span{color:#14152b}.aw-t[aria-pressed="true"]{background:#2f54ff;border-color:#2f54ff;color:#fff}.aw-t[aria-pressed="true"] span{color:#fff}
+.aw-foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:15px;font-weight:700}
+.aw-foot button{border:0;background:none;color:#2f54ff;font:inherit;cursor:pointer;padding:8px}.aw-foot a{color:#2f54ff;text-decoration:underline;padding:8px}
+#a11yw button:focus-visible,#a11yw a:focus-visible{outline:3px solid #ff9f1a;outline-offset:2px}
+html.a-hc{filter:contrast(1.35);--text-muted:#E4E6EA}html.a-hc body{background:#000}html.a-gs{filter:grayscale(1)}html.a-hc.a-gs{filter:grayscale(1) contrast(1.35)}
+html.a-ln a:not(#a11yw a){text-decoration:underline!important;text-underline-offset:3px;outline:2px solid #ffd21f;outline-offset:2px}
+html.a-rf body *:not(#a11yw *){font-family:Arial,sans-serif!important;letter-spacing:.01em}
+html.a-sa *,html.a-sa *::before,html.a-sa *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+/* stop animations: force the end state of everything that is revealed by animation */
+html.a-sa .reveal{opacity:1!important;transform:none!important}
+html.a-sa .about-gear{opacity:1!important;transform:none!important}
+html.a-sa .dim__line{transform:none!important}
+html.a-sa .dim__label{opacity:1!important}
+html.a-sa .tv__time{opacity:1!important}
+html.a-sa .qc{opacity:1!important;transform:scale(1) rotate(-8deg)!important}
+html.a-sa .part__sweep{display:none!important}
+html.a-sa .part__frame img{transform:none!important}
+html.a-bc,html.a-bc *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24'%3E%3Cpath d='M4 2l16 8-7 2.2L10 20z' fill='%23000' stroke='%23fff' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2,auto!important}
+@media print{#a11yw{display:none}}
